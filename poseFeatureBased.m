@@ -175,16 +175,19 @@ err_max_angle = max(abs(err_angles));
 D = rssq(s1.pose(1:3,end) - s2.pose(1:3,end)); % save the distance between the query and reference image
 %% visulize the query and reference images and their camera pose
 if plot_flag
-    figure;imshowpair(I1, I2, 'montage');
+    figure;
+%     imshowpair(I1, I2, 'montage');
+    subplot(121);imshow(I1);title('reference image', 'FontSize', 20);
+    subplot(122);imshow(I2);title('query image', 'FontSize', 20);
     figure;
 
     % plot the point cloud in the reference camera coordinate
     pcshow(s1.points_in_camera(1:3,:)','VerticalAxis','Y','VerticalAxisDir','down', ...
      'MarkerSize',30);
     grid on
-    xlabel('X (m)');
-    ylabel('Y (m)');
-    zlabel('Z (m)');
+    xlabel('X (m)', 'FontSize', 20);
+    ylabel('Y (m)', 'FontSize', 20);
+    zlabel('Z (m)', 'FontSize', 20);
     hold on
 
     % plot the reference camera
@@ -200,12 +203,15 @@ if plot_flag
     % plot the ground true pose of the query camera
     plotCamera('Size',1,'Orientation',R_1_to_2,'Location',...
      worldLocation_true_1, 'Color', 'g');
-    title('point cloud in cam1 coordinate');
+    title('Objects in reference coordinate', 'FontSize', 20);
 
     plot3(0,0,0, 'b-');
     plot3(worldLocation_est(1),worldLocation_est(2),worldLocation_est(3), 'r-');
     plot3(worldLocation_true_1(1),worldLocation_true_1(2),worldLocation_true_1(3), 'g-');
-    legend('3D points','cam1','cam2 estimated', 'cam2 true');
+    h_legend = legend('3D LIDAR points','Reference image: true pose', 'Query image: estimated pose','Query image: true pose');
+%     LEG = findobj(AX,'type','text');
+%     set(LEG,'FontSize',20)
+    set(h_legend,'FontSize',20);
 
     hold off
 end
