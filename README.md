@@ -1,6 +1,10 @@
 # **Camera Pose Estimation**
 Given a map contians street-view image and lidar, estimate the 6 DoF camera pose of a query image.
 
+* **Input of the system**: query image, reference image and lidar point cloud, where reference image and lidar are known in a global coordinate system.
+
+* **Output of the system**: 6 DoF camera pose of the query image in the global coordinate system.
+
 Note: _6 DoF camera pose_ mean _3 DoF translation_ and  _3 DoF rotation_ along _x_, _y_, _z_ axis. 
 
 ### One example of query and reference images
