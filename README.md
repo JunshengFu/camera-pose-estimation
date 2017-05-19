@@ -1,5 +1,5 @@
 # **Camera Pose Estimation**
-Given a map contians street-view image and lidar, estimate the 6 DoF camera pose of a query image.
+Given a map contians street-view images and 3D data (e.g. lidar, SfM point cloud, or depth), estimate the 6 DoF camera pose of a query image.
 
 * **Input of the system**: query image, reference image and lidar point cloud, where reference image and lidar are known in a global coordinate system.
 
