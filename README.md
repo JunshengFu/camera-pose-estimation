@@ -21,6 +21,9 @@ Note: _6 DoF camera pose_ mean _3 DoF translation_ and  _3 DoF rotation_ along _
 
 ### 2. My project files
 
+(Note: the hyperlinks **only** works if you are on the homepage of this GitHub reop,
+and if you are viewing it in "github.io" you can be redirected by clicking the **View the Project on GitHub** on the top)
+
 * [main.m](main.m) is the main code for this demo.
 
 * [read_pose.m](read_pose.m) read camera pose.
